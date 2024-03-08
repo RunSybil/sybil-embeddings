@@ -1,0 +1,40 @@
+[project]
+name = "sybil-embeddings"
+version = "0.1.0"
+description = "Tooling and Support for embedding models."
+authors = [
+    {name = "JustinTienken-Harder", email = "justinhardermsc@gmail.com"},
+]
+dependencies = [
+    "pytesseract>=0.3.10",
+    "transformers>=4.37.2",
+    "datasets>=2.17.1",
+    "rouge-score>=0.1.2",
+    "nltk>=3.8.1",
+    "tensorboard>=2.16.2",
+    "py7zr>=0.20.8",
+    "ipykernel>=6.29.2",
+    "ipywidgets>=8.1.2",
+    "torch>=2.2.0",
+    "mitreattack-python>=3.0.2",
+    "xlsx2csv>=0.8.2",
+    "evaluate>=0.4.1",
+    "accelerate>=0.27.2",
+    "beautifulsoup4>=4.12.3",
+    "selenium>=4.18.1",
+    "pytest-playwright>=0.4.4",
+    "wandb>=0.16.3",
+    "InstructorEmbedding>=1.0.1",
+    "sentence-transformers>=2.5.1"
+]
+requires-python = ">=3.11"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
