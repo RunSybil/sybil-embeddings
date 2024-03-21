@@ -8,6 +8,7 @@ class EmbeddingSearch:
     reshape = default_reshape
 
     def __init__(self, pre_processing = None, EmbeddingModel = None, **kwargs):
+        self.tokenizer = None
         if pre_processing is None:
             self.pre_processing = default_sql_preprocess
         if EmbeddingModel is None:
@@ -18,8 +19,8 @@ class EmbeddingSearch:
             except:
                 self.model = AutoModel.from_pretrained(EmbeddingModel)
                 self.tokenizer = AutoTokenizer.from_pretrained(EmbeddingModel)
-
-        self.tokenizer = self.model.tokenizer
+        if self.tokenizer is None:
+            self.tokenizer = self.model.tokenizer
         self.reshape = default_reshape
     
     def embed_query_results(self, sql_results, drop_ids: list[str], prefix = None, **kwargs):
